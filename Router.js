@@ -182,19 +182,63 @@ const NormalUserDrawer = createDrawerNavigator(
 const AppStack = createStackNavigator({
   Home: Drawer,
   PatientList: PatientList,
-  PatientDetail: PatientDetail,
+  PatientDetail: {
+    screen: PatientDetail,
+    navigationOptions: {
+      title: "Patient Details",
+      headerStyle: {
+        backgroundColor: "#ff7e02"
+      },
+      headerTitleStyle: {
+        flex: 1
+      }
+    }
+  },
   UserDetail: UserDetail,
   MyPatients: MyPatients,
   AddHospital: AddHospital,
   HospitalList: HospitalList,
-  PatientRegistration: PatientRegistration
+  PatientRegistration: {
+    screen: PatientRegistration,
+    navigationOptions: {
+      title: "Patient Registration",
+      headerStyle: {
+        backgroundColor: "#ff7e02"
+      },
+      headerTitleStyle: {
+        flex: 1
+      }
+    }
+  }
 });
 const NormalUser = createStackNavigator({
   Home: NormalUserDrawer,
   PatientList: PatientList,
-  PatientDetail: PatientDetail,
+  PatientDetail: {
+    screen: PatientDetail,
+    navigationOptions: {
+      title: "Patient Details",
+      headerStyle: {
+        backgroundColor: "#ff7e02"
+      },
+      headerTitleStyle: {
+        flex: 1
+      }
+    }
+  },
   MyPatients: MyPatients,
-  PatientRegistration: PatientRegistration
+  PatientRegistration: {
+    screen: PatientRegistration,
+    navigationOptions: {
+      title: "Patient Registration",
+      headerStyle: {
+        backgroundColor: "#ff7e02"
+      },
+      headerTitleStyle: {
+        flex: 1
+      }
+    }
+  }
 });
 const AuthStack = createStackNavigator({
   LoginScreen: {
@@ -245,7 +289,7 @@ export default createAppContainer(createSwitchNavigator(
   {
     AuthLoading: AuthLoadingScreen,
     App: AppStack,
-    NormalUser: NormalUser, 
+    NormalUser: NormalUser,
     Auth: AuthStack,
   },
   {
